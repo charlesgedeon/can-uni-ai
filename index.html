@@ -14,25 +14,50 @@
 <body class="bg-gray-100 font-sans antialiased">
 
   <!-- Header -->
-  <header class="bg-blue-800 text-white p-6 shadow-md fixed w-full z-10 top-0">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-      <h1 class="text-3xl font-bold mb-2 md:mb-0">Canadian University AI Guidelines</h1>
-      <p class="text-lg text-blue-200 text-center md:text-left">A directory for educators and teaching centers.</p>
-    </div>
-  </header>
+    <header class="bg-blue-800 text-white shadow-md">
+    <div class="container mx-auto px-6 py-6">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+            <h1 class="text-3xl font-bold">Canadian University AI Guidelines</h1>
+            <p class="text-lg text-blue-200">A directory for educators and teaching centers.</p>
+        </div>
 
-  <div class="flex pt-40 md:pt-16">
+        <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-white text-blue-800 px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+            Contact
+        </a>
+        </div>
+    </div>
+    </header>
+
+  <div class="flex pt-0">
 
     <!-- Left Nav (auto-generated) -->
-    <nav class="w-64 bg-gray-800 text-white p-6 hidden md:block fixed h-full overflow-y-auto">
-      <ul class="space-y-4" id="province-nav">
-        <li class="font-bold text-gray-400 uppercase text-sm">Provinces</li>
-      </ul>
+    <nav class="w-64 bg-gray-800 text-white p-6 hidden md:block sticky top-0 h-screen overflow-y-auto flex flex-col">
+        <ul class="space-y-4 flex-1" id="province-nav">
+            <li class="font-bold text-gray-400 uppercase text-sm">Provinces</li>
+        </ul>
     </nav>
 
     <!-- Main -->
-    <main class="flex-1 md:ml-64 p-6">
-      <div class="container mx-auto">
+    <main class="flex-1 p-6">
+    <div class="container mx-auto">
+        <div class="max-w-6xl mx-auto">
+
+        <div class="bg-white rounded-lg shadow p-5 mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-1">About this directory</h2>
+            <p class="text-sm text-gray-700 leading-relaxed mb-6">This simple directory is meant to help Canadian university teaching and learning units (e.g., Centres for Teaching &amp; Learning / Teaching Commons / Educational Development)
+                and Canadian instructors find, compare, and share guidance on generative AI in higher education.
+                If I’m missing a resource, or if a tag is misattributed, please 
+                <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
+                class="text-blue-700 hover:text-blue-800 underline">
+                contact me</a>.
+            </p>
+            <h2 class="text-lg font-semibold text-gray-800 mb-1">About the creator</h2>
+            <p class="text-sm text-gray-700 leading-relaxed mb-1">👋 Hello, I'm Charlie Gedeon, a university instructor, learning experience designer, and UX designer. In 2025, I gave a <a href="https://www.youtube.com/watch?v=m8WomdCLBqE" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-800 underline">TEDx Talk</a> on AI in education that has gained over 200,000 views.</p>
+            <p class="text-sm text-gray-700 leading-relaxed">Enjoyed this resource? Add me on <a href="https://www.linkedin.com/in/charlesgedeon/" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-800 underline">LinkedIn</a> and subscribe to my <a href="https://www.youtube.com/channel/UCTAbJsNNMtsOgGZYAKtF8cA" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-800 underline">YouTube channel</a>.</p>
+        </div>
+
 
         <!-- Tag Filters -->
         <div class="bg-white rounded-lg shadow p-4 mb-8">
@@ -49,9 +74,13 @@
         <div id="sections-root"></div>
 
         <footer class="text-center text-gray-500 text-sm mt-10 mb-6">
-          Last updated: <span id="last-updated"></span>
+          Created by
+            <a href="https://charliegedeon.com" target="_blank" rel="noopener noreferrer"
+            class="text-blue-600 hover:text-blue-900 underline">
+            Charlie Gedeon</a>. Last updated: <span id="last-updated"></span>
         </footer>
 
+        </div>
       </div>
     </main>
   </div>
@@ -73,7 +102,6 @@ const TAGS = {
 
 /**
  * DATASET (from your pasted table)
- * For tagging: best-effort heuristic based on URL patterns, with a few overrides.
  */
 const universities = [
   // Alberta
@@ -173,20 +201,16 @@ const universities = [
 
 /**
  * Tagging heuristics
- * (You can override per-university below if you want.)
  */
-function inferTags(url, name) {
+function inferTags(url) {
   if (!url) return [];
-
   const u = url.toLowerCase();
   const tags = new Set();
 
-  // Research-ish (libraries, libguides, research-writing)
   if (u.includes("libguides") || u.includes("/library") || u.includes("research") || u.includes("graduate-postdoctoral")) {
-    tags.add(TAGS.research.key);
+    tags.add("research");
   }
 
-  // Instructor-ish (teaching centres, CTL/TLC, instructors, teaching-and-learning)
   if (
     u.includes("teaching") ||
     u.includes("teaching-learning") ||
@@ -196,64 +220,57 @@ function inferTags(url, name) {
     u.includes("tlc") ||
     u.includes("for-instructors") ||
     u.includes("instructors") ||
-    u.includes("faculty")
+    u.includes("faculty") ||
+    u.includes("teaching-commons")
   ) {
-    tags.add(TAGS.instructor.key);
+    tags.add("instructor");
   }
 
-  // Student-ish (integrity pages, undergraduate students)
   if (u.includes("integrity") || u.includes("undergraduate") || u.includes("academic-success")) {
-    tags.add(TAGS.student.key);
+    tags.add("student");
   }
 
-  // Generic-ish (principles/policy/strategy)
   if (u.includes("principles") || u.includes("policy") || u.includes("strategy") || u.includes("governance") || u.includes("guidance")) {
-    tags.add(TAGS.generic.key);
+    tags.add("generic");
   }
 
-  // PDFs: often guides/policies; keep generic + instructor if title suggests.
   if (u.endsWith(".pdf")) {
-    tags.add(TAGS.generic.key);
-    if (u.includes("instructor") || u.includes("teaching")) tags.add(TAGS.instructor.key);
+    tags.add("generic");
+    if (u.includes("instructor") || u.includes("teaching")) tags.add("instructor");
   }
 
-  // If nothing matched, default to Generic
-  if (tags.size === 0) tags.add(TAGS.generic.key);
-
-  // Small name-based nudge (optional)
-  if (name.includes("Library") || name.includes("LibGuide")) tags.add(TAGS.research.key);
-
+  if (tags.size === 0) tags.add("generic");
   return Array.from(tags);
 }
 
 /**
- * Manual tag overrides (optional, for nuance)
+ * Manual tag overrides (your earlier “best effort” picks)
  */
 const tagOverrides = {
-  "University of British Columbia": ["generic"],              // principles page
-  "Simon Fraser University": ["generic"],                     // strategy/approach page
-  "Emily Carr University of Art + Design": ["generic"],       // policy-ish
-  "University of Ottawa": ["research", "generic"],            // research writing LLM policy
-  "University of Victoria": ["research", "student"],          // libguide
-  "University of Winnipeg": ["research", "student"],          // library page
-  "University of New Brunswick": ["research", "student"],     // undergrad AI guide
-  "Mount Allison University": ["research", "student"],        // libguide
+  "University of British Columbia": ["generic"],
+  "Simon Fraser University": ["generic"],
+  "Emily Carr University of Art + Design": ["generic"],
+  "University of Ottawa": ["research", "generic"],
+  "University of Victoria": ["research", "student"],
+  "University of Winnipeg": ["research", "student"],
+  "University of New Brunswick": ["research", "student"],
+  "Mount Allison University": ["research", "student"],
   "École de technologie supérieure (ÉTS)": ["research", "student"],
-  "Université Laval": ["generic"],                            // AI systems info hub
-  "University of Waterloo": ["generic", "instructor"],        // use principles & guidelines
-  "Thompson Rivers University": ["instructor", "student"],    // education hub
+  "Université Laval": ["generic"],
+  "University of Waterloo": ["generic", "instructor"],
+  "Thompson Rivers University": ["instructor", "student"],
   "Mount Saint Vincent University": ["research", "instructor"],
   "Dalhousie University": ["research", "instructor"],
   "Bishop's University": ["research", "student"],
-  "Université de Montréal": ["research", "generic"],          // thesis/dissertation guidance (pdf)
-  "Université du Québec à Montréal (UQAM)": ["generic"],       // pdf guide (often teaching-related)
+  "Université de Montréal": ["research", "generic"],
+  "Université du Québec à Montréal (UQAM)": ["generic"],
 };
 
 /**
- * Build enriched records with tags
+ * Build records
  */
 const data = universities.map(u => {
-  const inferred = inferTags(u.url, u.name);
+  const inferred = inferTags(u.url);
   const overridden = tagOverrides[u.name] || null;
   return { ...u, tags: overridden ? overridden : inferred };
 });
@@ -261,11 +278,8 @@ const data = universities.map(u => {
 /**
  * UI STATE
  */
-let activeTagKeys = new Set(); // if empty => show all
+let activeTagKeys = new Set(); // AND logic: must contain ALL selected tags; empty => show all
 
-/**
- * Helpers
- */
 function slugifyProvince(prov) {
   return prov.toLowerCase().replace(/\s+/g, "-").replace(/[’']/g, "");
 }
@@ -279,9 +293,21 @@ function tagPill(tagKey) {
   `;
 }
 
+function pdfBadge(url) {
+  if (!url) return "";
+  const isPdf = url.toLowerCase().endsWith(".pdf");
+  if (!isPdf) return "";
+  return `
+    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-yellow-50 text-yellow-800 border border-yellow-200">
+      PDF
+    </span>
+  `;
+}
+
 function cardTemplate(u) {
   const hasLink = !!u.url;
   const tagsHtml = (u.tags || []).map(tagPill).join("");
+  const badge = pdfBadge(u.url);
 
   const button = hasLink
     ? `<a href="${u.url}" target="_blank" rel="noopener noreferrer"
@@ -295,20 +321,27 @@ function cardTemplate(u) {
 
   return `
     <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-      <h3 class="text-xl font-semibold text-gray-800 mb-3">${u.name}</h3>
+      <div class="flex items-start justify-between gap-3 mb-2">
+        <h3 class="text-xl font-semibold text-gray-800">${u.name}</h3>
+        ${badge}
+      </div>
       <div class="flex flex-wrap gap-2 mb-4">${tagsHtml}</div>
       ${button}
     </div>
   `;
 }
 
-function matchesActiveTags(u) {
+/**
+ * AND logic filter:
+ * - If user selected tags: the card must include ALL selected tags
+ */
+function matchesActiveTags_AND(u) {
   if (activeTagKeys.size === 0) return true;
   const ut = new Set(u.tags || []);
   for (const t of activeTagKeys) {
-    if (ut.has(t)) return true; // OR logic (match any selected tag)
+    if (!ut.has(t)) return false;
   }
-  return false;
+  return true;
 }
 
 /**
@@ -386,14 +419,12 @@ function renderSections() {
     const items = grouped[prov]
       .slice()
       .sort((a,b) => a.name.localeCompare(b.name))
-      .filter(matchesActiveTags);
+      .filter(matchesActiveTags_AND);
 
-    // Section wrapper
     const section = document.createElement("section");
     section.id = id;
     section.className = "mb-10";
 
-    // Header
     section.innerHTML = `
       <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">${prov}</h2>
       ${
@@ -413,11 +444,10 @@ function renderSections() {
  * Init
  */
 (function init(){
-  // Last updated stamp
   const now = new Date();
-  document.getElementById("last-updated").innerText = now.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  document.getElementById("last-updated").innerText =
+    now.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 
-  // Provinces for nav
   const provinces = Array.from(new Set(data.map(d => d.province))).sort((a,b) => a.localeCompare(b));
   renderNav(provinces);
 
