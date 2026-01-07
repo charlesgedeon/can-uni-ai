@@ -4,7 +4,7 @@ A simple, open directory of Canadian university guidance on generative AI in tea
 
 This site is designed primarily for:
 - **Canadian university teaching and learning units** (e.g., Centres for Teaching & Learning, Teaching Commons, Educational Development units)
-- **Canadian instructors** looking to understand how their own institution — or others — are approaching generative AI
+- **Canadian instructors** looking to understand how their own institution or others are approaching generative AI
 
 The goal is not to rank or judge policies, but to make them **easy to find, compare, and discuss**.
 
