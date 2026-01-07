@@ -1,312 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian University AI Teaching Guidelines Directory</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Custom styles if needed, though Tailwind handles most */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canadian University AI Teaching Guidelines Directory</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .tag-pill { border: 1px solid rgba(0,0,0,0.08); }
+  </style>
 </head>
+
 <body class="bg-gray-100 font-sans antialiased">
 
-    <header class="bg-blue-800 text-white p-6 shadow-md fixed w-full z-10 top-0">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <h1 class="text-3xl font-bold mb-2 md:mb-0">Canadian University AI Guidelines</h1>
-            <p class="text-lg text-blue-200 text-center md:text-left">A directory for educators and teaching centers.</p>
+  <!-- Header -->
+  <header class="bg-blue-800 text-white p-6 shadow-md fixed w-full z-10 top-0">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <h1 class="text-3xl font-bold mb-2 md:mb-0">Canadian University AI Guidelines</h1>
+      <p class="text-lg text-blue-200 text-center md:text-left">A directory for educators and teaching centers.</p>
+    </div>
+  </header>
+
+  <div class="flex pt-40 md:pt-16">
+
+    <!-- Left Nav (auto-generated) -->
+    <nav class="w-64 bg-gray-800 text-white p-6 hidden md:block fixed h-full overflow-y-auto">
+      <ul class="space-y-4" id="province-nav">
+        <li class="font-bold text-gray-400 uppercase text-sm">Provinces</li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main class="flex-1 md:ml-64 p-6">
+      <div class="container mx-auto">
+
+        <!-- Tag Filters -->
+        <div class="bg-white rounded-lg shadow p-4 mb-8">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-semibold text-gray-800">Filters</h2>
+              <p class="text-sm text-gray-600">Toggle tags to filter cards across the whole directory.</p>
+            </div>
+            <div class="flex flex-wrap gap-2" id="tag-filters"></div>
+          </div>
         </div>
-    </header>
 
-    <div class="flex pt-40 md:pt-16"> <nav class="w-64 bg-gray-800 text-white p-6 hidden md:block fixed h-full overflow-y-auto">
-            <ul class="space-y-4">
-                <li class="font-bold text-gray-400 uppercase text-sm">Provinces</li>
-                <li><a href="#alberta" class="block py-2 px-4 rounded hover:bg-gray-700">Alberta</a></li>
-                <li><a href="#british-columbia" class="block py-2 px-4 rounded hover:bg-gray-700">British Columbia</a></li>
-                <li><a href="#manitoba" class="block py-2 px-4 rounded hover:bg-gray-700">Manitoba</a></li>
-                <li><a href="#new-brunswick" class="block py-2 px-4 rounded hover:bg-gray-700">New Brunswick</a></li>
-                <li><a href="#newfoundland-labrador" class="block py-2 px-4 rounded hover:bg-gray-700">Newfoundland and Labrador</a></li>
-                <li><a href="#nova-scotia" class="block py-2 px-4 rounded hover:bg-gray-700">Nova Scotia</a></li>
-                <li><a href="#ontario" class="block py-2 px-4 rounded hover:bg-gray-700">Ontario</a></li>
-                <li><a href="#prince-edward-island" class="block py-2 px-4 rounded hover:bg-gray-700">Prince Edward Island</a></li>
-                <li><a href="#quebec" class="block py-2 px-4 rounded hover:bg-gray-700">Quebec</a></li>
-                <li><a href="#saskatchewan" class="block py-2 px-4 rounded hover:bg-gray-700">Saskatchewan</a></li>
-            </ul>
-        </nav>
+        <!-- Sections injected here -->
+        <div id="sections-root"></div>
 
-        <main class="flex-1 md:ml-64 p-6">
-            <div class="container mx-auto">
+        <footer class="text-center text-gray-500 text-sm mt-10 mb-6">
+          Last updated: <span id="last-updated"></span>
+        </footer>
 
-                <section id="alberta" class="mb-10">
-                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Alberta</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Athabasca University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-athabasca"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+      </div>
+    </main>
+  </div>
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Alberta</h3>
-                            <p class="text-gray-700 mb-4">CTL Generative AI resource hub with teaching-focused guidance: understanding risks/limits, course and assessment design, academic integrity and citation practices, suggested syllabus language, and links to workshops/support to help instructors integrate GenAI responsibly.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-ualberta">Jan 7, 2026</span></p>
-                            <a href="https://www.ualberta.ca/en/centre-for-teaching-and-learning/resources/generative-ai/index.html" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
+<script>
+/**
+ * TAG SYSTEM
+ * - Instructor ✅
+ * - Student 👨‍🎓
+ * - Research 🔬
+ * - Generic 🌐
+ */
+const TAGS = {
+  instructor: { label: "Instructor ✅", key: "instructor" },
+  student:    { label: "Student 👨‍🎓", key: "student" },
+  research:   { label: "Research 🔬", key: "research" },
+  generic:    { label: "Generic 🌐", key: "generic" },
+};
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Mount Royal University</h3>
-                            <p class="text-gray-700 mb-4">MRU’s Generative AI guidance helps instructors set clear expectations for student use of AI in courses, including approved/permitted uses, syllabus language, academic integrity links, documentation/attribution practices and consultation/workshop support to integrate AI thoughtfully.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-mtroyal">Jan 7, 2026</span></p>
-                            <a href="https://www.mtroyal.ca/AboutMountRoyal/TeachingLearning/AcademicDevelopmentCentre/ClassroomAndCurriculum/artificial-intelligence.htm" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
-                        
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Calgary</h3>
-                            <p class="text-gray-700 mb-4">UCalgary’s GenAI teaching & learning page sets guiding principles (meaningful learning, integrity, access, transparency, privacy/security) and curates supports: workshops, consultations, guides/handbooks, and campus partners to help educators decide if/how/when to use GenAI.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-ucalgary">Jan 7, 2026</span></p>
-                            <a href="https://teaching-learning.ucalgary.ca/resources-educators/generative-ai-teaching-and-learning" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
+/**
+ * DATASET (from your pasted table)
+ * For tagging: best-effort heuristic based on URL patterns, with a few overrides.
+ */
+const universities = [
+  // Alberta
+  { name: "Athabasca University", province: "Alberta", url: null },
+  { name: "MacEwan University", province: "Alberta", url: "https://www.macewan.ca/about-macewan/teaching/resources/generative-ai/" },
+  { name: "Mount Royal University", province: "Alberta", url: "https://www.mtroyal.ca/AboutMountRoyal/TeachingLearning/AcademicDevelopmentCentre/ClassroomAndCurriculum/artificial-intelligence.htm" },
+  { name: "University of Alberta", province: "Alberta", url: "https://www.ualberta.ca/en/centre-for-teaching-and-learning/resources/generative-ai/index.html" },
+  { name: "University of Calgary", province: "Alberta", url: "https://teaching-learning.ucalgary.ca/resources-educators/generative-ai-teaching-and-learning" },
+  { name: "University of Lethbridge", province: "Alberta", url: "https://www.ulethbridge.ca/teachingcentre/ai-resources" },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">MacEwan University</h3>
-                            <p class="text-gray-700 mb-4">MacEwan University’s CTL generative AI page offers faculty guidance on ethical, responsible GenAI use in teaching and learning, including best practice principles, policy links, sample syllabus language, permitted/required AI usage conditions, academic integrity considerations, and how to contact support.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-macewan"></span>Jan 7, 2026</p>
-                            <a href="https://www.macewan.ca/about-macewan/teaching/resources/generative-ai/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
+  // British Columbia
+  { name: "Capilano University", province: "British Columbia", url: "https://cte.capilanou.ca/generative-ai/" },
+  { name: "Emily Carr University of Art + Design", province: "British Columbia", url: "https://www.ecuad.ca/about/leadership-and-governance/policies/ai-guidelines" },
+  { name: "Kwantlen Polytechnic University", province: "British Columbia", url: "https://www.kpu.ca/generative-ai" },
+  { name: "Royal Roads University", province: "British Columbia", url: "https://www.royalroads.ca/about/academics/centre-teaching-educational-technologies/teaching-resources/generative-artificial" },
+  { name: "Simon Fraser University", province: "British Columbia", url: "https://www.sfu.ca/about/leadership-governance-strategy/pan-university-initiatives/ai-at-sfu/our-approach-to-ai.html" },
+  { name: "Thompson Rivers University", province: "British Columbia", url: "https://aieducation.trubox.ca/" },
+  { name: "University of British Columbia", province: "British Columbia", url: "https://genai.ubc.ca/guidance/principles/" },
+  { name: "University of Northern British Columbia", province: "British Columbia", url: "https://www.unbc.ca/provost/guidance-acceptability-using-generative-ai-coursework" },
+  { name: "University of the Fraser Valley", province: "British Columbia", url: "https://www.ufv.ca/teaching-and-learning/artificial-intelligence/" },
+  { name: "University of Victoria", province: "British Columbia", url: "https://libguides.uvic.ca/AI_Tools" },
+  { name: "Vancouver Island University", province: "British Columbia", url: "https://wordpress.viu.ca/ciel/2023/09/01/what-does-ai-mean-in-your-classroom/" },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Lethbridge</h3>
-                            <p class="text-gray-700 mb-4">U of Lethbridge Teaching Centre’s AI resources page explains responsible and ethical use of generative AI in teaching/learning, offers principles and guidelines for instructors, sample syllabus language, assessment considerations, and links to workshops and support for integrating AI.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-ulethbridge"></span>Jan 7, 2026</p>
-                            <a href="https://www.ulethbridge.ca/teachingcentre/ai-resources" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
-                        
-                    </div>
-                </section>
+  // Manitoba
+  { name: "Brandon University", province: "Manitoba", url: null },
+  { name: "University of Manitoba", province: "Manitoba", url: "https://umanitoba.ca/centre-advancement-teaching-learning/integrity/artificial-intelligence" },
+  { name: "University of Winnipeg", province: "Manitoba", url: "https://library.uwinnipeg.ca/borrowing-and-services/help-with-research/chatgpt-and-genai.html" },
+  { name: "Université de Saint-Boniface", province: "Manitoba", url: null },
 
-                <section id="british-columbia" class="mb-10">
-                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">British Columbia</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  // New Brunswick
+  { name: "Mount Allison University", province: "New Brunswick", url: "https://libraryguides.mta.ca/genai" },
+  { name: "St. Thomas University", province: "New Brunswick", url: "https://libguides.thomasu.edu/AILiteracy/Home" },
+  { name: "Université de Moncton", province: "New Brunswick", url: "https://www.umoncton.ca/integrite/intelligence_artificielle" },
+  { name: "University of New Brunswick", province: "New Brunswick", url: "https://lib.unb.ca/guides/artificial-intelligence-ai-undergraduate-students" },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Simon Fraser University</h3>
-                            <p class="text-gray-700 mb-4">SFU’s “Our Approach to AI” outlines an institution-wide strategy focused on collaboration, agility, and “AI for the Greater Good.” It defines action areas (capacity, classroom use, research, community) and principles like treating AI as tools and staying adaptive.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-sfu">Jan 7, 2026</span></p>
-                            <a href="https://www.sfu.ca/about/leadership-governance-strategy/pan-university-initiatives/ai-at-sfu/our-approach-to-ai.html" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
-                        
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of British Columbia</h3>
-                            <p class="text-gray-700 mb-4">UBC’s GenAI principles focus on mitigating risks: data privacy, security, copyright, plagiarism, bias, and environmental impacts. Emphasizes appropriate use with approvals/PIA where needed, user accountability for outputs, and protecting confidential and personal data.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-ubc">Jan 7, 2026</span></p>
-                            <a href="https://genai.ubc.ca/guidance/principles/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
+  // Newfoundland and Labrador
+  { name: "Memorial University of Newfoundland", province: "Newfoundland and Labrador", url: "https://www.mun.ca/citl/explore/generative-ai/" },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Victoria</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-uvic"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+  // Nova Scotia
+  { name: "Acadia University", province: "Nova Scotia", url: null },
+  { name: "Cape Breton University", province: "Nova Scotia", url: null },
+  { name: "Dalhousie University", province: "Nova Scotia", url: "https://dal.ca.libguides.com/genai/teaching" },
+  { name: "Mount Saint Vincent University", province: "Nova Scotia", url: "https://libguides.msvu.ca/ai/teaching" },
+  { name: "NSCAD University", province: "Nova Scotia", url: "https://library.nscad.ca/AI" },
+  { name: "Saint Mary’s University", province: "Nova Scotia", url: "https://studio.smu.ca/ai-in-teaching-and-learning" },
+  { name: "St. Francis Xavier University", province: "Nova Scotia", url: "https://www.stfx.ca/student-services/academic-services/academic-success-centre/academic-integrity/faculty-syllabus" },
+  { name: "Université Sainte-Anne", province: "Nova Scotia", url: null },
+  { name: "University of King's College", province: "Nova Scotia", url: null },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Capilano University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-capilano"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+  // Ontario
+  { name: "Algoma University", province: "Ontario", url: "https://algomau.ca/academics/academic-integrity-office/faculty-resources-on-academic-integrity/guidelines-for-the-responsible-use-of-generative-ai-in-teaching-and-learning/" },
+  { name: "Brock University", province: "Ontario", url: "https://brocku.ca/pedagogical-innovation/resources/guidance-on-chatgpt-and-generative-ai/" },
+  { name: "Carleton University", province: "Ontario", url: "https://carleton.ca/ai/instructors/recommendations-and-guidelines/" },
+  { name: "Lakehead University", province: "Ontario", url: "https://www.lakeheadu.ca/teaching-commons/teaching-and-ai" },
+  { name: "Laurentian University", province: "Ontario", url: null },
+  { name: "McMaster University", province: "Ontario", url: "https://mi.mcmaster.ca/generative-artificial-intelligence-in-teaching-and-learning/" },
+  { name: "Nipissing University", province: "Ontario", url: "https://www.nipissingu.ca/sites/default/files/2023-07/Generative%20AI%20Guide%20for%20Instructors%20-%20July%207%2C%202023.pdf" },
+  { name: "OCAD University", province: "Ontario", url: "https://www.ocadu.ca/sites/default/files/WLC/Generative%20AI%20-%20Teaching%20and%20Learning%20Strategies.pdf" },
+  { name: "Ontario Tech University", province: "Ontario", url: "https://tlc.ontariotechu.ca/nexthub/artificial-intelligence/for-instructors/index.php" },
+  { name: "Queen's University", province: "Ontario", url: "https://www.queensu.ca/provost/teaching-and-learning/statements-guidelines-and-resources/teaching-and-learning-statements" },
+  { name: "Toronto Metropolitan University (formerly Ryerson)", province: "Ontario", url: "https://www.torontomu.ca/centre-for-excellence-in-learning-and-teaching/teaching-resources1/generative-artificial-intelligence/" },
+  { name: "Trent University", province: "Ontario", url: "https://www.trentu.ca/ai-trent/ai-guidance/guidance-faculty" },
+  { name: "University of Guelph", province: "Ontario", url: "https://www.uoguelph.ca/vpacademic/avpa/generative-ai-teaching-and-learning/" },
+  { name: "University of Ottawa", province: "Ontario", url: "https://www.uottawa.ca/faculty-medicine/graduate-postdoctoral/research-writing-guidelines/policy-ai-llm-usage" },
+  { name: "University of Toronto", province: "Ontario", url: "https://teaching.utoronto.ca/teaching-uoft-genai/" },
+  { name: "University of Waterloo", province: "Ontario", url: "https://uwaterloo.ca/generative-ai/ai-use-principles-and-guidelines" },
+  { name: "University of Windsor", province: "Ontario", url: "https://www.uwindsor.ca/ai/303/generative-ai-faculty" },
+  { name: "Western University", province: "Ontario", url: "https://ai.uwo.ca/Guidance/index.html" },
+  { name: "Wilfrid Laurier University", province: "Ontario", url: "https://researchcentres.wlu.ca/teaching-and-learning/building/generative-ai-in-teaching-and-learning.html" },
+  { name: "York University", province: "Ontario", url: "https://www.yorku.ca/teachingandlearning/gen-ai/" },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Emily Carr University of Art + Design</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-emilycarr"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+  // Prince Edward Island
+  { name: "University of Prince Edward Island", province: "Prince Edward Island", url: "https://sites.google.com/view/instructional-resources/guidance-on-using-generative-ai-in-teaching-and-learning" },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Kwantlen Polytechnic University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-kpu"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Royal Roads University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-royalroads"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+  // Quebec
+  { name: "Bishop's University", province: "Quebec", url: "https://ubishops.libguides.com/AI-Research" },
+  { name: "Concordia University", province: "Quebec", url: "https://www.concordia.ca/ctl/tech-tools/teach-with-technology/guidelines-gen-ai.html" },
+  { name: "McGill University", province: "Quebec", url: "https://teachingkb.mcgill.ca/tlk/using-generative-ai-in-teaching-and-learning" },
+  { name: "Université de Montréal", province: "Quebec", url: "https://esp.umontreal.ca/fileadmin/esp/documents/PDF/Lignes_directrices_Utilisation_IA_Memoire_et_these_Octobre2024.pdf" },
+  { name: "Université de Sherbrooke", province: "Quebec", url: "https://www.usherbrooke.ca/ssf/enseignement/intelligence-artificielle-ia" },
+  { name: "Université du Québec à Montréal (UQAM)", province: "Quebec", url: "https://cpu.umontreal.ca/fileadmin/cpu/documents/enseignement-apprentissage/enseigner-numerique/ia/utiliser-iag/GUI_PIM_Usages-IAg.pdf" },
+  { name: "Université du Québec à Trois-Rivières (UQTR)", province: "Quebec", url: "https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=7759" },
+  { name: "Université du Québec à Chicoutimi (UQAC)", province: "Quebec", url: "https://www.uqac.ca/ia/boite-a-outils/" },
+  { name: "Université du Québec à Rimouski (UQAR)", province: "Quebec", url: null },
+  { name: "Université du Québec en Outaouais (UQO)", province: "Quebec", url: null },
+  { name: "Université du Québec en Abitibi-Témiscamingue (UQAT)", province: "Quebec", url: "https://www.uqat.ca/uqat/ia/" },
+  { name: "École de technologie supérieure (ÉTS)", province: "Quebec", url: "https://etsmtl.libguides.com/IAgenerative" },
+  { name: "Institut national de la recherche scientifique (INRS)", province: "Quebec", url: null },
+  { name: "Télé-université (TELUQ)", province: "Quebec", url: null },
+  { name: "École nationale d'administration publique (ENAP)", province: "Quebec", url: null },
+  { name: "Université Laval", province: "Quebec", url: "https://www.ulaval.ca/en/information-technology/artificial-intelligence-systems" },
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Thompson Rivers University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-thompsonrivers"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+  // Saskatchewan
+  { name: "University of Regina", province: "Saskatchewan", url: "https://ctl.uregina.ca/generative-ai-at-the-university-of-regina" },
+  { name: "University of Saskatchewan", province: "Saskatchewan", url: "https://ai.usask.ca/index.php" },
+];
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Northern British Columbia</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-unbc"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+/**
+ * Tagging heuristics
+ * (You can override per-university below if you want.)
+ */
+function inferTags(url, name) {
+  if (!url) return [];
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of the Fraser Valley</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-ufv"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
+  const u = url.toLowerCase();
+  const tags = new Set();
 
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Vancouver Island University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-viu"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        
-                    </div>
-                </section>
+  // Research-ish (libraries, libguides, research-writing)
+  if (u.includes("libguides") || u.includes("/library") || u.includes("research") || u.includes("graduate-postdoctoral")) {
+    tags.add(TAGS.research.key);
+  }
 
-                <section id="manitoba" class="mb-10">
-                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Manitoba</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Manitoba</h3>
-                            <p class="text-gray-700 mb-4">UM’s academic integrity resource on AI explains common uses/risks, when AI use may be misconduct, and how to be transparent (citation/acknowledgement). Includes tips for instructors on assessment and course policy, plus privacy reminders about sharing personal/student data.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-umanitoba">Jan 7, 2026</span></p>
-                            <a href="https://umanitoba.ca/centre-advancement-teaching-learning/integrity/artificial-intelligence" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Brandon University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-brandonu"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                         <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Winnipeg</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-uwinnipeg"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                         <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Université de Saint-Boniface</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-ustboniface"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                    </div>
-                </section>
+  // Instructor-ish (teaching centres, CTL/TLC, instructors, teaching-and-learning)
+  if (
+    u.includes("teaching") ||
+    u.includes("teaching-learning") ||
+    u.includes("teachingcentre") ||
+    u.includes("centre-for-teaching") ||
+    u.includes("ctl") ||
+    u.includes("tlc") ||
+    u.includes("for-instructors") ||
+    u.includes("instructors") ||
+    u.includes("faculty")
+  ) {
+    tags.add(TAGS.instructor.key);
+  }
 
-                <section id="new-brunswick" class="mb-10">
-                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">New Brunswick</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Mount Allison University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-mountallison"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">St. Thomas University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-stthomas"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Université de Moncton</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-umoncton"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of New Brunswick</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-unb"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                    </div>
-                </section>
+  // Student-ish (integrity pages, undergraduate students)
+  if (u.includes("integrity") || u.includes("undergraduate") || u.includes("academic-success")) {
+    tags.add(TAGS.student.key);
+  }
 
-                <section id="newfoundland-labrador" class="mb-10">
-                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Newfoundland and Labrador</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Memorial University of Newfoundland</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-mun"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                    </div>
-                </section>
+  // Generic-ish (principles/policy/strategy)
+  if (u.includes("principles") || u.includes("policy") || u.includes("strategy") || u.includes("governance") || u.includes("guidance")) {
+    tags.add(TAGS.generic.key);
+  }
 
-                <section id="nova-scotia" class="mb-10">
-                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Nova Scotia</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Dalhousie University</h3>
-                            <p class="text-gray-700 mb-4">Dalhousie's library provides extensive guides on generative AI for teaching and learning, covering topics from academic integrity to pedagogical strategies and tools for educators.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-dalhousie">Jan 7, 2026</span></p>
-                            <a href="https://dal.ca.libguides.com/genai/teaching" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Acadia University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-acadiau"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Cape Breton University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-cbu"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Mount Saint Vincent University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-msvu"></span>Jan 7, 2026</p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                    </div>
-                </section>
+  // PDFs: often guides/policies; keep generic + instructor if title suggests.
+  if (u.endsWith(".pdf")) {
+    tags.add(TAGS.generic.key);
+    if (u.includes("instructor") || u.includes("teaching")) tags.add(TAGS.instructor.key);
+  }
 
-                <section id="quebec" class="mb-10">
-                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Quebec</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Bishop's University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-bishop">Jan 7, 2026</span></p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Concordia University</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-concordia">Jan 7, 2026</span></p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                       <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">McGill University</h3>
-                            <p class="text-gray-700 mb-4">Teaching & Learning KB guide explaining GenAI, approved vs. not‑approved tools (incl. secure Copilot), ethical considerations, course outline/syllabus language, assessment design ideas, citation/acknowledgement guidance, and a clear warning that AI-detection tools are unreliable.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-bishop">Jan 7, 2026</span></p>
-                            <a href="https://teachingkb.mcgill.ca/tlk/using-generative-ai-in-teaching-and-learning" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Université de Montréal</h3>
-                            <p class="text-gray-700 mb-4">Graduate studies guidelines (Oct 2024) for using AI in theses/dissertations: emphasizes research integrity, transparency, and proper citation/acknowledgement. It clarifies acceptable vs. unacceptable uses (e.g., no fabrication), and sets expectations for documenting AI support.</p>
-                            <p class="text-gray-500 text-sm mb-4">Summary generated: <span id="date-udem">Jan 7, 2026</span></p>
-                            <a href="https://esp.umontreal.ca/fileadmin/esp/documents/PDF/Lignes_directrices_Utilisation_IA_Memoire_et_these_Octobre2024.pdf" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Université de Sherbrooke</h3>
-                            <p class="text-gray-700 mb-4">Researching latest guidelines… Link not yet found.</p>
-                            <p class="text-gray-500 text-sm mb-4">Last updated: <span id="date-udes">Jan 7, 2026</span></p>
-                            <button disabled href="#" target="none" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg disabled:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-50">No Link</button>
-                        </div>
-                    </div>
-                </section>
+  // If nothing matched, default to Generic
+  if (tags.size === 0) tags.add(TAGS.generic.key);
+
+  // Small name-based nudge (optional)
+  if (name.includes("Library") || name.includes("LibGuide")) tags.add(TAGS.research.key);
+
+  return Array.from(tags);
+}
+
+/**
+ * Manual tag overrides (optional, for nuance)
+ */
+const tagOverrides = {
+  "University of British Columbia": ["generic"],              // principles page
+  "Simon Fraser University": ["generic"],                     // strategy/approach page
+  "Emily Carr University of Art + Design": ["generic"],       // policy-ish
+  "University of Ottawa": ["research", "generic"],            // research writing LLM policy
+  "University of Victoria": ["research", "student"],          // libguide
+  "University of Winnipeg": ["research", "student"],          // library page
+  "University of New Brunswick": ["research", "student"],     // undergrad AI guide
+  "Mount Allison University": ["research", "student"],        // libguide
+  "École de technologie supérieure (ÉTS)": ["research", "student"],
+  "Université Laval": ["generic"],                            // AI systems info hub
+  "University of Waterloo": ["generic", "instructor"],        // use principles & guidelines
+  "Thompson Rivers University": ["instructor", "student"],    // education hub
+  "Mount Saint Vincent University": ["research", "instructor"],
+  "Dalhousie University": ["research", "instructor"],
+  "Bishop's University": ["research", "student"],
+  "Université de Montréal": ["research", "generic"],          // thesis/dissertation guidance (pdf)
+  "Université du Québec à Montréal (UQAM)": ["generic"],       // pdf guide (often teaching-related)
+};
+
+/**
+ * Build enriched records with tags
+ */
+const data = universities.map(u => {
+  const inferred = inferTags(u.url, u.name);
+  const overridden = tagOverrides[u.name] || null;
+  return { ...u, tags: overridden ? overridden : inferred };
+});
+
+/**
+ * UI STATE
+ */
+let activeTagKeys = new Set(); // if empty => show all
+
+/**
+ * Helpers
+ */
+function slugifyProvince(prov) {
+  return prov.toLowerCase().replace(/\s+/g, "-").replace(/[’']/g, "");
+}
+
+function tagPill(tagKey) {
+  const label = TAGS[tagKey]?.label || tagKey;
+  return `
+    <span class="tag-pill inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-50 text-gray-700">
+      ${label}
+    </span>
+  `;
+}
+
+function cardTemplate(u) {
+  const hasLink = !!u.url;
+  const tagsHtml = (u.tags || []).map(tagPill).join("");
+
+  const button = hasLink
+    ? `<a href="${u.url}" target="_blank" rel="noopener noreferrer"
+         class="inline-block bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+         Visit Resource
+       </a>`
+    : `<button disabled
+         class="inline-block bg-gray-500 text-white px-5 py-2.5 rounded-lg opacity-60 cursor-not-allowed">
+         No Link
+       </button>`;
+
+  return `
+    <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+      <h3 class="text-xl font-semibold text-gray-800 mb-3">${u.name}</h3>
+      <div class="flex flex-wrap gap-2 mb-4">${tagsHtml}</div>
+      ${button}
+    </div>
+  `;
+}
+
+function matchesActiveTags(u) {
+  if (activeTagKeys.size === 0) return true;
+  const ut = new Set(u.tags || []);
+  for (const t of activeTagKeys) {
+    if (ut.has(t)) return true; // OR logic (match any selected tag)
+  }
+  return false;
+}
+
+/**
+ * Render functions
+ */
+function renderNav(provinces) {
+  const nav = document.getElementById("province-nav");
+  provinces.forEach(p => {
+    const id = slugifyProvince(p);
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="#${id}" class="block py-2 px-4 rounded hover:bg-gray-700">${p}</a>`;
+    nav.appendChild(li);
+  });
+}
+
+function renderTagFilters() {
+  const root = document.getElementById("tag-filters");
+  root.innerHTML = "";
+
+  Object.values(TAGS).forEach(t => {
+    const btn = document.createElement("button");
+    btn.className = "px-3 py-2 rounded-lg border text-sm font-medium bg-white hover:bg-gray-50 transition";
+    btn.dataset.tag = t.key;
+    btn.innerText = t.label;
+
+    btn.addEventListener("click", () => {
+      const key = t.key;
+      if (activeTagKeys.has(key)) activeTagKeys.delete(key);
+      else activeTagKeys.add(key);
+      updateFilterButtonStyles();
+      renderSections();
+    });
+
+    root.appendChild(btn);
+  });
+
+  const clear = document.createElement("button");
+  clear.className = "px-3 py-2 rounded-lg border text-sm font-medium bg-gray-800 text-white hover:bg-gray-700 transition";
+  clear.innerText = "Clear";
+  clear.addEventListener("click", () => {
+    activeTagKeys.clear();
+    updateFilterButtonStyles();
+    renderSections();
+  });
+  root.appendChild(clear);
+
+  updateFilterButtonStyles();
+}
+
+function updateFilterButtonStyles() {
+  document.querySelectorAll("#tag-filters button[data-tag]").forEach(btn => {
+    const key = btn.dataset.tag;
+    if (activeTagKeys.has(key)) {
+      btn.className = "px-3 py-2 rounded-lg border text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition";
+    } else {
+      btn.className = "px-3 py-2 rounded-lg border text-sm font-medium bg-white hover:bg-gray-50 transition";
+    }
+  });
+}
+
+function renderSections() {
+  const root = document.getElementById("sections-root");
+  root.innerHTML = "";
+
+  const grouped = {};
+  data.forEach(u => {
+    if (!grouped[u.province]) grouped[u.province] = [];
+    grouped[u.province].push(u);
+  });
+
+  const provinces = Object.keys(grouped).sort((a,b) => a.localeCompare(b));
+
+  provinces.forEach(prov => {
+    const id = slugifyProvince(prov);
+    const items = grouped[prov]
+      .slice()
+      .sort((a,b) => a.name.localeCompare(b.name))
+      .filter(matchesActiveTags);
+
+    // Section wrapper
+    const section = document.createElement("section");
+    section.id = id;
+    section.className = "mb-10";
+
+    // Header
+    section.innerHTML = `
+      <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">${prov}</h2>
+      ${
+        items.length === 0
+          ? `<div class="bg-white rounded-lg shadow p-6 text-gray-700">No results for the selected tags in ${prov}.</div>`
+          : `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+               ${items.map(cardTemplate).join("")}
+             </div>`
+      }
+    `;
+
+    root.appendChild(section);
+  });
+}
+
+/**
+ * Init
+ */
+(function init(){
+  // Last updated stamp
+  const now = new Date();
+  document.getElementById("last-updated").innerText = now.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+
+  // Provinces for nav
+  const provinces = Array.from(new Set(data.map(d => d.province))).sort((a,b) => a.localeCompare(b));
+  renderNav(provinces);
+
+  renderTagFilters();
+  renderSections();
+})();
+</script>
+
+</body>
+</html>
