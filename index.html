@@ -14,16 +14,16 @@
 <body class="bg-gray-100 font-sans antialiased">
 
   <!-- Header -->
-    <header class="bg-blue-800 text-white shadow-md">
+    <header class="bg-red-800 text-white shadow-md">
     <div class="container mx-auto px-6 py-6">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
             <h1 class="text-3xl font-bold">Canadian University AI Guidelines</h1>
-            <p class="text-lg text-blue-200">A directory for educators and teaching centers.</p>
+            <p class="text-lg text-red-200">A directory for educators and teaching centers.</p>
         </div>
 
         <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
-            class="inline-block bg-white text-blue-800 px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+            class="inline-block bg-white text-red-800 px-5 py-2.5 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200">
             Contact
         </a>
         </div>
@@ -50,12 +50,12 @@
                 and Canadian instructors find, compare, and share guidance on generative AI in higher education.
                 If I’m missing a resource, or if a tag is misattributed, please 
                 <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
-                class="text-blue-700 hover:text-blue-800 underline">
+                class="text-red-800 hover:text-red-900 underline">
                 contact me</a>.
             </p>
-            <h2 class="text-lg font-semibold text-gray-800 mb-1">About the creator</h2>
-            <p class="text-sm text-gray-700 leading-relaxed mb-1">👋 Hello, I'm Charlie Gedeon, a university instructor, learning experience designer, and UX designer. In 2025, I gave a <a href="https://www.youtube.com/watch?v=m8WomdCLBqE" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-800 underline">TEDx Talk</a> on AI in education that has gained over 200,000 views.</p>
-            <p class="text-sm text-gray-700 leading-relaxed">Enjoyed this resource? Add me on <a href="https://www.linkedin.com/in/charlesgedeon/" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-800 underline">LinkedIn</a> and subscribe to my <a href="https://www.youtube.com/channel/UCTAbJsNNMtsOgGZYAKtF8cA" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-800 underline">YouTube channel</a>.</p>
+            <h2 class="text-md font-semibold text-gray-800 mb-1">Who is this?</h2>
+            <p class="text-sm text-gray-700 leading-relaxed mb-1">👋 Hello, I'm Charlie Gedeon, a university instructor, instructional and UX designer. In 2025, I gave a <a href="https://www.youtube.com/watch?v=m8WomdCLBqE" target="_blank" rel="noopener noreferrer" class="text-red-800 hover:text-red-900 underline">TEDx Talk</a> on AI in education that has gained over 200,000 views.</p>
+            <p class="text-sm text-gray-700 leading-relaxed">Enjoyed this resource? Add me on <a href="https://www.linkedin.com/in/charlesgedeon/" target="_blank" rel="noopener noreferrer" class="text-red-800 hover:text-red-900 underline">LinkedIn</a> and subscribe to my <a href="https://www.youtube.com/channel/UCTAbJsNNMtsOgGZYAKtF8cA" target="_blank" rel="noopener noreferrer" class="text-red-800 hover:text-red-900 underline">YouTube channel</a>.</p>
         </div>
 
 
@@ -76,7 +76,7 @@
         <footer class="text-center text-gray-500 text-sm mt-10 mb-6">
           Created by
             <a href="https://charliegedeon.com" target="_blank" rel="noopener noreferrer"
-            class="text-blue-600 hover:text-blue-900 underline">
+            class="text-red-600 hover:text-red-900 underline">
             Charlie Gedeon</a>. Last updated: <span id="last-updated"></span>
         </footer>
 
@@ -311,7 +311,7 @@ function cardTemplate(u) {
 
   const button = hasLink
     ? `<a href="${u.url}" target="_blank" rel="noopener noreferrer"
-         class="inline-block bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+         class="inline-block bg-red-700 text-white px-5 py-2.5 rounded-lg hover:bg-red-900 transition-colors duration-200">
          Visit Resource
        </a>`
     : `<button disabled
@@ -395,7 +395,7 @@ function updateFilterButtonStyles() {
   document.querySelectorAll("#tag-filters button[data-tag]").forEach(btn => {
     const key = btn.dataset.tag;
     if (activeTagKeys.has(key)) {
-      btn.className = "px-3 py-2 rounded-lg border text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition";
+      btn.className = "px-3 py-2 rounded-lg border text-sm font-medium bg-red-600 text-white hover:bg-red-800 transition";
     } else {
       btn.className = "px-3 py-2 rounded-lg border text-sm font-medium bg-white hover:bg-gray-50 transition";
     }
@@ -426,7 +426,7 @@ function renderSections() {
     section.className = "mb-10";
 
     section.innerHTML = `
-      <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">${prov}</h2>
+      <h2 class="text-4xl font-extrabold text-red-800 mb-6 border-b-2 border-red-300 pb-2">${prov}</h2>
       ${
         items.length === 0
           ? `<div class="bg-white rounded-lg shadow p-6 text-gray-700">No results for the selected tags in ${prov}.</div>`
