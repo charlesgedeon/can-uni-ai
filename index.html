@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian University AI Teaching Guidelines Directory</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles if needed, though Tailwind handles most */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <header class="bg-blue-800 text-white p-6 shadow-md fixed w-full z-10 top-0">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-3xl font-bold mb-2 md:mb-0">Canadian University AI Guidelines</h1>
+            <p class="text-lg text-blue-200 text-center md:text-left">A directory for educators and teaching centers.</p>
+            <div class="mt-4 md:mt-0 relative">
+                <input type="text" placeholder="Search universities..." class="p-2 pl-10 rounded-lg bg-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-40 md:pt-32"> <nav class="w-64 bg-gray-800 text-white p-6 hidden md:block fixed h-full overflow-y-auto">
+            <ul class="space-y-4">
+                <li class="font-bold text-gray-400 uppercase text-sm">Provinces</li>
+                <li><a href="#alberta" class="block py-2 px-4 rounded hover:bg-gray-700">Alberta</a></li>
+                <li><a href="#british-columbia" class="block py-2 px-4 rounded hover:bg-gray-700">British Columbia</a></li>
+                <li><a href="#manitoba" class="block py-2 px-4 rounded hover:bg-gray-700">Manitoba</a></li>
+                <li><a href="#new-brunswick" class="block py-2 px-4 rounded hover:bg-gray-700">New Brunswick</a></li>
+                <li><a href="#newfoundland-labrador" class="block py-2 px-4 rounded hover:bg-gray-700">Newfoundland and Labrador</a></li>
+                <li><a href="#nova-scotia" class="block py-2 px-4 rounded hover:bg-gray-700">Nova Scotia</a></li>
+                <li><a href="#ontario" class="block py-2 px-4 rounded hover:bg-gray-700">Ontario</a></li>
+                <li><a href="#prince-edward-island" class="block py-2 px-4 rounded hover:bg-gray-700">Prince Edward Island</a></li>
+                <li><a href="#quebec" class="block py-2 px-4 rounded hover:bg-gray-700">Quebec</a></li>
+                <li><a href="#saskatchewan" class="block py-2 px-4 rounded hover:bg-gray-700">Saskatchewan</a></li>
+            </ul>
+        </nav>
+
+        <main class="flex-1 md:ml-64 p-6">
+            <div class="container mx-auto">
+
+                <section id="alberta" class="mb-10">
+                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Alberta</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Alberta</h3>
+                            <p class="text-gray-700 mb-4">The Centre for Teaching and Learning provides comprehensive resources on generative AI, focusing on best practices for integration into curriculum and assessment while upholding academic integrity. They offer guides for both instructors and students.</p>
+                            <a href="https://www.ualberta.ca/en/centre-for-teaching-and-learning/resources/generative-ai/index.html" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-ualberta"></span></p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Calgary</h3>
+                            <p class="text-gray-700 mb-4">UCalgary's Teaching and Learning Centre offers resources for educators on incorporating generative AI ethically and effectively. Their guidelines aim to support instructors in designing assignments and managing student use of AI tools.</p>
+                            <a href="https://teaching-learning.ucalgary.ca/resources-educators/generative-ai-teaching-and-learning" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-ucalgary"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">MacEwan University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.macewan.ca/wcm/MacEwan-Sites/TeachingLearning" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-macewan"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Mount Royal University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.mtroyal.ca/teaching/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-mountroyal"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Lethbridge</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.ulethbridge.ca/teachingcentre/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-ulethbridge"></span></p>
+                        </div>
+                        
+                    </div>
+                </section>
+
+                <section id="british-columbia" class="mb-10">
+                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">British Columbia</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Simon Fraser University</h3>
+                            <p class="text-gray-700 mb-4">SFU's approach to AI emphasizes responsible use, ethical considerations, and leveraging AI for research and learning while maintaining academic integrity. They provide general guidelines and resources for the university community.</p>
+                            <a href="https://www.sfu.ca/about/leadership-governance-strategy/pan-university-initiatives/ai-at-sfu/our-approach-to-ai.html" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-sfu"></span></p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of British Columbia</h3>
+                            <p class="text-gray-700 mb-4">UBC provides comprehensive guidance on generative AI, outlining principles for ethical and effective use in teaching and learning. Their resources include practical advice for instructors and students on integrating AI tools responsibly.</p>
+                            <a href="https://genai.ubc.ca/guidance/principles/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-ubc"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Victoria</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.uvic.ca/teachingandlearning/faculty-staff/resources/index.php" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-uvic"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Capilano University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.capilanou.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-capilano"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Emily Carr University of Art + Design</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.ecuad.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-emilycarr"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Kwantlen Polytechnic University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.kpu.ca/teaching-learning" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-kpu"></span></p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Royal Roads University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.royalroads.ca/centre-teaching-and-educational-technology" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-royalroads"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Thompson Rivers University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.tru.ca/faculty-staff/resources/teaching-learning/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-thompsonrivers"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Northern British Columbia</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.unbc.ca/centre-teaching-learning" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-unbc"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of the Fraser Valley</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://www.ufv.ca/teaching-learning-centre/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-ufv"></span></p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Vancouver Island University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to teaching center.</p>
+                            <a href="https://ciel.viu.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-viu"></span></p>
+                        </div>
+                        
+                    </div>
+                </section>
+
+                <section id="manitoba" class="mb-10">
+                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Manitoba</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Manitoba</h3>
+                            <p class="text-gray-700 mb-4">The Centre for the Advancement of Teaching and Learning provides resources on academic integrity in the age of AI, guiding students and instructors on responsible use and preventing misuse of generative tools.</p>
+                            <a href="https://umanitoba.ca/centre-advancement-teaching-learning/integrity/artificial-intelligence" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-umanitoba"></span></p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Brandon University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.brandonu.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-brandonu"></span></p>
+                        </div>
+                         <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of Winnipeg</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.uwinnipeg.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-uwinnipeg"></span></p>
+                        </div>
+                         <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Université de Saint-Boniface</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://ustboniface.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-ustboniface"></span></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="new-brunswick" class="mb-10">
+                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">New Brunswick</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Mount Allison University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://mta.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-mountallison"></span></p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">St. Thomas University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.stu.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-stthomas"></span></p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Université de Moncton</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.umoncton.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-umoncton"></span></p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">University of New Brunswick</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.unb.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-unb"></span></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="newfoundland-labrador" class="mb-10">
+                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Newfoundland and Labrador</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Memorial University of Newfoundland</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.mun.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-mun"></span></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="nova-scotia" class="mb-10">
+                    <h2 class="text-4xl font-extrabold text-blue-800 mb-6 border-b-2 border-blue-300 pb-2">Nova Scotia</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Dalhousie University</h3>
+                            <p class="text-gray-700 mb-4">Dalhousie's library provides extensive guides on generative AI for teaching and learning, covering topics from academic integrity to pedagogical strategies and tools for educators.</p>
+                            <a href="https://dal.ca.libguides.com/genai/teaching" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-dalhousie"></span></p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Acadia University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.acadiau.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-acadiau"></span></p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Cape Breton University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.cbu.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
+                            <p class="text-gray-500 text-sm mt-4">Summary generated: <span id="date-cbu"></span></p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Mount Saint Vincent University</h3>
+                            <p class="text-gray-700 mb-4">Researching latest guidelines. Dedicated GenAI guidelines not yet published; link leads to main website.</p>
+                            <a href="https://www.msvu.ca/" target="_blank" class="inline-block bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">Visit Resource</a>
