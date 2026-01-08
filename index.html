@@ -76,8 +76,8 @@
           <div class="bg-white rounded-lg shadow p-4 mb-8">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
-                <h2 class="text-xl font-semibold text-gray-800">Filters</h2>
-                <p class="text-sm text-gray-600">Toggle tags to filter cards across the whole directory.</p>
+                <h2 class="text-xl font-semibold text-gray-800">Audience Filters</h2>
+                <p class="text-sm text-gray-600">Toggle tags to filter cards based on the intended audience of the resource.</p>
               </div>
               <div class="flex flex-wrap gap-2" id="tag-filters"></div>
             </div>
@@ -452,16 +452,18 @@ function cardTemplate(u) {
        </button>`;
 
   return `
-    <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+    <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
       <div class="flex items-start justify-between gap-3 mb-2">
         <h3 class="text-xl font-semibold text-gray-800">${u.name}</h3>
         ${badge}
       </div>
 
       ${writtenBy}
-
-      <div class="flex flex-wrap gap-2 mb-4">${tagsHtml}</div>
-      ${button}
+      <div class="flex flex-wrap gap-2 align-middle mb-4"><span class="text-sm text-gray-600 font-semibold">Audience:</span>${tagsHtml}</div>
+      
+      <div class="mt-auto">
+        ${button}
+      </div>
     </div>
   `;
 }
