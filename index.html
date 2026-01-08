@@ -15,71 +15,83 @@
 <body class="bg-gray-100 font-sans antialiased">
 
   <!-- Header -->
-    <header class="bg-red-800 text-white shadow-md">
+  <header class="bg-red-800 text-white shadow-md">
     <div class="container mx-auto px-6 py-6">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-            <h1 class="text-3xl font-bold">Canadian University AI Guidelines</h1>
-            <p class="text-lg text-red-200">A directory for educators and teaching centers.</p>
+          <h1 class="text-3xl font-bold">Canadian University AI Guidelines</h1>
+          <p class="text-lg text-red-200">A directory for educators and teaching centers.</p>
         </div>
 
         <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
-            class="inline-block bg-white text-red-700 px-5 py-2.5 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200">
-            Contact
+           class="inline-block bg-white text-red-700 px-5 py-2.5 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200">
+          Contact
         </a>
-        </div>
+      </div>
     </div>
-    </header>
+  </header>
 
   <div class="flex pt-0">
 
     <!-- Left Nav (auto-generated) -->
     <nav class="w-64 bg-gray-800 text-white p-6 hidden md:block sticky top-0 h-screen overflow-y-auto flex flex-col">
-        <ul class="space-y-4 flex-1" id="province-nav">
-            <li class="font-bold text-gray-400 uppercase text-sm">Provinces</li>
-        </ul>
+      <ul class="space-y-4 flex-1" id="province-nav">
+        <li class="font-bold text-gray-400 uppercase text-sm">Provinces</li>
+      </ul>
     </nav>
 
     <!-- Main -->
     <main class="flex-1 p-6">
-    <div class="container mx-auto">
+      <div class="container mx-auto">
         <div class="max-w-6xl mx-auto">
 
-        <div class="bg-white rounded-lg shadow p-5 mb-6">
+          <div class="bg-white rounded-lg shadow p-5 mb-6">
             <h2 class="text-lg font-semibold text-gray-800 mb-1">About this directory</h2>
-            <p class="text-sm text-gray-700 leading-relaxed mb-6">This simple directory is meant to help Canadian university teaching and learning units (e.g., Centres for Teaching &amp; Learning / Teaching Commons / Educational Development)
-                and Canadian instructors find, compare, and share guidance on generative AI in higher education.
-                If I’m missing a resource, or if a tag is misattributed, please 
-                <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
-                class="text-red-700 hover:text-red-900 underline">
-                contact me</a>.
+            <p class="text-sm text-gray-700 leading-relaxed mb-6">
+              This simple directory is meant to help Canadian university teaching and learning units (e.g., Centres for Teaching &amp; Learning / Teaching Commons / Educational Development)
+              and Canadian instructors find, compare, and share guidance on generative AI in higher education.
+              If I’m missing a resource, or if a tag is misattributed, please
+              <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
+                 class="text-red-700 hover:text-red-900 underline">contact me</a>.
             </p>
+
             <h2 class="text-md font-semibold text-gray-800 mb-1">Who is this?</h2>
-            <p class="text-sm text-gray-700 leading-relaxed mb-1">👋 Hello, I'm Charlie Gedeon, a university instructor, instructional and UX designer. In 2025, I gave a <a href="https://www.youtube.com/watch?v=m8WomdCLBqE" target="_blank" rel="noopener noreferrer" class="text-red-700 hover:text-red-900 underline">TEDx Talk</a> on AI in education that has gained over 200,000 views.</p>
-            <p class="text-sm text-gray-700 leading-relaxed">Enjoyed this resource? Add me on <a href="https://www.linkedin.com/in/charlesgedeon/" target="_blank" rel="noopener noreferrer" class="text-red-700 hover:text-red-900 underline">LinkedIn</a> and subscribe to my <a href="https://www.youtube.com/channel/UCTAbJsNNMtsOgGZYAKtF8cA" target="_blank" rel="noopener noreferrer" class="text-red-700 hover:text-red-900 underline">YouTube channel</a>.</p>
-        </div>
-
-
-        <!-- Tag Filters -->
-        <div class="bg-white rounded-lg shadow p-4 mb-8">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <h2 class="text-xl font-semibold text-gray-800">Filters</h2>
-              <p class="text-sm text-gray-600">Toggle tags to filter cards across the whole directory.</p>
-            </div>
-            <div class="flex flex-wrap gap-2" id="tag-filters"></div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-1">
+              👋 Hello, I'm Charlie Gedeon, a university instructor, instructional and UX designer. In 2025, I gave a
+              <a href="https://www.youtube.com/watch?v=m8WomdCLBqE" target="_blank" rel="noopener noreferrer"
+                 class="text-red-700 hover:text-red-900 underline">TEDx Talk</a>
+              on AI in education that has gained over 200,000 views.
+            </p>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Enjoyed this resource? Add me on
+              <a href="https://www.linkedin.com/in/charlesgedeon/" target="_blank" rel="noopener noreferrer"
+                 class="text-red-700 hover:text-red-900 underline">LinkedIn</a>
+              and subscribe to my
+              <a href="https://www.youtube.com/channel/UCTAbJsNNMtsOgGZYAKtF8cA" target="_blank" rel="noopener noreferrer"
+                 class="text-red-700 hover:text-red-900 underline">YouTube channel</a>.
+            </p>
           </div>
-        </div>
 
-        <!-- Sections injected here -->
-        <div id="sections-root"></div>
+          <!-- Tag Filters -->
+          <div class="bg-white rounded-lg shadow p-4 mb-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h2 class="text-xl font-semibold text-gray-800">Filters</h2>
+                <p class="text-sm text-gray-600">Toggle tags to filter cards across the whole directory.</p>
+              </div>
+              <div class="flex flex-wrap gap-2" id="tag-filters"></div>
+            </div>
+          </div>
 
-        <footer class="text-center text-gray-500 text-sm mt-10 mb-6">
-          Created by
+          <!-- Sections injected here -->
+          <div id="sections-root"></div>
+
+          <footer class="text-center text-gray-500 text-sm mt-10 mb-6">
+            Created by
             <a href="https://charliegedeon.com" target="_blank" rel="noopener noreferrer"
-            class="text-red-700 hover:text-red-900 underline">
-            Charlie Gedeon</a>. Last updated: <span id="last-updated"></span>
-        </footer>
+               class="text-red-700 hover:text-red-900 underline">Charlie Gedeon</a>.
+            Last updated: <span id="last-updated"></span>
+          </footer>
 
         </div>
       </div>
@@ -102,7 +114,7 @@ const TAGS = {
 };
 
 /**
- * DATASET (from your pasted table)
+ * DATASET
  */
 const universities = [
   // Alberta
@@ -245,7 +257,7 @@ function inferTags(url) {
 }
 
 /**
- * Manual tag overrides (your earlier “best effort” picks)
+ * Manual tag overrides
  */
 const tagOverrides = {
   "University of British Columbia": ["generic"],
@@ -268,12 +280,127 @@ const tagOverrides = {
 };
 
 /**
+ * Written-by heuristics + manual overrides
+ */
+function inferWrittenBy(url) {
+  if (!url) return null;
+  const u = url.toLowerCase();
+
+  if (u.includes("libguides") || u.includes("/library") || u.includes("library.")) {
+    return "Library";
+  }
+
+  if (
+    u.includes("centre-for-teaching") ||
+    u.includes("teaching-learning") ||
+    u.includes("teachingcentre") ||
+    u.includes("teaching-centre") ||
+    u.includes("teaching-commons") ||
+    u.includes("/ctl") ||
+    u.includes("ctl.") ||
+    u.includes("/citl") ||
+    u.includes("citl.") ||
+    u.includes("/tlc") ||
+    u.includes("tlc.") ||
+    u.includes("centre-for-excellence-in-learning-and-teaching") ||
+    u.includes("pedagogical-innovation")
+  ) {
+    return "Teaching & Learning Unit";
+  }
+
+  if (u.includes("provost") || u.includes("vpacademic") || u.includes("vp-academic")) {
+    return "Office of the Provost / Academic Leadership";
+  }
+
+  if (u.includes("integrity") || u.includes("academic-success") || u.includes("academic-integrity")) {
+    return "Academic Integrity / Student Success";
+  }
+
+  if (u.includes("faculty-") || u.includes("/faculty/") || u.includes("faculty-medicine")) {
+    return "Faculty / School";
+  }
+
+  if (u.includes("information-technology") || (u.includes("it") && u.includes("artificial-intelligence"))) {
+    return "Information Technology";
+  }
+
+  return "University-wide / General";
+}
+
+const writtenByOverrides = {
+  // Alberta
+  "MacEwan University": "Centre for Teaching & Learning",
+  "Mount Royal University": "Academic Development Centre",
+  "University of Alberta": "Centre for Teaching & Learning",
+  "University of Calgary": "Teaching & Learning Unit",
+  "University of Lethbridge": "Teaching Centre",
+
+  // British Columbia
+  "Capilano University": "Centre for Teaching Excellence",
+  "Royal Roads University": "Centre for Teaching & Educational Technologies",
+  "University of Northern British Columbia": "Office of the Provost",
+  "University of Victoria": "Library",
+  "Simon Fraser University": "University-wide / Strategy",
+  "University of British Columbia": "University-wide / Principles",
+
+  // Manitoba
+  "University of Manitoba": "Academic Integrity / Teaching & Learning Unit",
+  "University of Winnipeg": "Library",
+
+  // New Brunswick
+  "Mount Allison University": "Library",
+  "St. Thomas University": "Library",
+  "Université de Moncton": "Academic Integrity",
+  "University of New Brunswick": "Library",
+
+  // Newfoundland and Labrador
+  "Memorial University of Newfoundland": "Centre for Innovation in Teaching & Learning (CITL)",
+
+  // Nova Scotia
+  "Dalhousie University": "Centre for Learning & Teaching",
+  "Mount Saint Vincent University": "Library",
+  "NSCAD University": "Library",
+
+  // Ontario
+  "Brock University": "Centre for Pedagogical Innovation",
+  "Carleton University": "University-wide / Teaching Support",
+  "McMaster University": "MacPherson Institute",
+  "Ontario Tech University": "Teaching & Learning Centre",
+  "Toronto Metropolitan University (formerly Ryerson)": "Centre for Excellence in Learning & Teaching",
+  "University of Toronto": "Centre for Teaching Support & Innovation (CTSI)",
+  "University of Ottawa": "Faculty of Medicine (Graduate Studies)",
+  "Queen's University": "Office of the Provost",
+  "University of Guelph": "Office of the Vice-Provost (Academic)",
+  "Wilfrid Laurier University": "Teaching & Learning Unit",
+  "York University": "Teaching & Learning Unit",
+
+  // Quebec
+  "Concordia University": "Centre for Teaching & Learning",
+  "McGill University": "Teaching & Learning Knowledge Base",
+  "Université de Montréal": "Graduate Studies (Policy / Guidelines)",
+  "École de technologie supérieure (ÉTS)": "Library",
+  "Université Laval": "Information Technology",
+
+  // Saskatchewan
+  "University of Regina": "Centre for Teaching & Learning",
+  "University of Saskatchewan": "University-wide / Role-based Guidance",
+};
+
+/**
  * Build records
  */
 const data = universities.map(u => {
-  const inferred = inferTags(u.url);
-  const overridden = tagOverrides[u.name] || null;
-  return { ...u, tags: overridden ? overridden : inferred };
+  const inferredTags = inferTags(u.url);
+  const overriddenTags = tagOverrides[u.name] || null;
+
+  const inferredWrittenBy = inferWrittenBy(u.url);
+  const overriddenWrittenBy = writtenByOverrides[u.name] || null;
+
+  return {
+    ...u,
+    tags: overriddenTags ? overriddenTags : inferredTags,
+    writtenBy: overriddenWrittenBy ? overriddenWrittenBy : inferredWrittenBy,
+  };
 });
 
 /**
@@ -310,6 +437,10 @@ function cardTemplate(u) {
   const tagsHtml = (u.tags || []).map(tagPill).join("");
   const badge = pdfBadge(u.url);
 
+  const writtenBy = u.writtenBy
+    ? `<p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Written by:</span> ${u.writtenBy}</p>`
+    : "";
+
   const button = hasLink
     ? `<a href="${u.url}" target="_blank" rel="noopener noreferrer"
          class="inline-block bg-red-700 text-white px-5 py-2.5 rounded-lg hover:bg-red-900 transition-colors duration-200">
@@ -326,6 +457,9 @@ function cardTemplate(u) {
         <h3 class="text-xl font-semibold text-gray-800">${u.name}</h3>
         ${badge}
       </div>
+
+      ${writtenBy}
+
       <div class="flex flex-wrap gap-2 mb-4">${tagsHtml}</div>
       ${button}
     </div>
