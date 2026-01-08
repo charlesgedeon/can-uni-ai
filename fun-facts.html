@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fun Facts · Canadian University AI Guidelines</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans antialiased">
+
+  <!-- Header -->
+    <header class="bg-red-800 text-white shadow-md">
+    <div class="container mx-auto px-6 py-6">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+
+        <div>
+            <a href="index.html" class="inline-block">
+            <h1 class="text-3xl font-bold">Canadian University AI Guidelines</h1>
+            </a>
+            <p class="text-lg text-red-200">A directory for educators and teaching centers.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4">
+            <nav class="flex items-center gap-4 text-sm font-semibold">
+            <a href="index.html" class="text-white hover:text-red-200 transition-colors duration-200">Home</a>
+            <a href="fun-facts.html" class="text-white hover:text-red-200 transition-colors duration-200">Fun Facts</a>
+            </nav>
+
+            <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-white text-red-700 px-5 py-2.5 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200">
+            Contact
+            </a>
+        </div>
+
+        </div>
+    </div>
+    </header>
+
+  <!-- Main (no left nav) -->
+  <main class="p-6">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Top card -->
+        <div class="bg-white rounded-lg shadow p-5 mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">Fun Facts</h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            This page is a lightweight “what does the dataset show?” view — meant to spark ideas for educators and teaching & learning units.
+            I’ll keep expanding these as the directory grows.
+          </p>
+        </div>
+
+        <!-- Accordion -->
+        <div class="space-y-4" id="fun-facts-root"></div>
+
+        <footer class="text-center text-gray-500 text-sm mt-10 mb-6">
+          Created by
+          <a href="https://charliegedeon.com" target="_blank" rel="noopener noreferrer"
+             class="text-red-700 hover:text-red-900 underline">Charlie Gedeon</a>.
+          Last updated: <span id="last-updated"></span>
+        </footer>
+
+      </div>
+    </div>
+  </main>
+
+<script>
+  // Last updated (same as home)
+  (function initDate(){
+    const now = new Date();
+    document.getElementById("last-updated").innerText =
+      now.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  })();
+
+  /**
+   * Fun Facts (PLACEHOLDERS)
+   * Replace these with your real facts once you send the first set of instructions.
+   */
+  const funFacts = [
+    {
+        title: "How many unis call it a ‘policy’ vs ‘guidelines’?",
+        emoji: "📘",
+        body: `
+            <div class="mb-4 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+                <p class="text-xs text-blue-900 leading-relaxed">
+                    <strong>Disclosure:</strong>
+                    This insight was drafted from notes generated using <strong>NotebookLM</strong>.
+                </p>
+            </div>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+            <strong>The short answer:</strong> almost none call it a <em>policy</em>.
+            Across Canadian universities, GenAI documents are overwhelmingly framed as
+            <strong>guidelines, guidance, or principles</strong> rather than as a single,
+            institution-wide AI policy.
+            </p>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+            This wording choice is not accidental. It reflects a pattern where AI is treated
+            primarily as a <strong>pedagogical issue</strong>, with flexibility left to instructors,
+            rather than as a rigid compliance framework.
+            </p>
+
+            <h4 class="text-sm font-semibold text-gray-800 mt-4 mb-2">
+            📌 “Policy” is the exception
+            </h4>
+            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mb-4">
+            <li>
+                <a href="https://www.uottawa.ca/faculty-medicine/graduate-postdoctoral/research-writing-guidelines/policy-ai-llm-usage"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                University of Ottawa (Faculty of Medicine / Graduate Studies)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.macewan.ca/about-macewan/teaching/resources/generative-ai/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                MacEwan University
+                </a>
+            </li>
+            <li>
+                <a href="https://ai.uwo.ca/Guidance/index.html"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                Western University
+                </a>
+            </li>
+            <li>
+                <a href="https://www.sfu.ca/about/leadership-governance-strategy/pan-university-initiatives/ai-at-sfu/our-approach-to-ai.html"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                Simon Fraser University
+                </a>
+            </li>
+            </ul>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+            When “policy” appears, it is usually tied to <strong>institutional governance,
+            risk, or compliance</strong> rather than classroom practice.
+            </p>
+
+            <h4 class="text-sm font-semibold text-gray-800 mt-4 mb-2">
+            🧩 “Guidelines” are the dominant framing
+            </h4>
+            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mb-4">
+            <li>
+                <a href="https://uwaterloo.ca/generative-ai/ai-use-principles-and-guidelines"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                University of Waterloo
+                </a>
+            </li>
+            <li>
+                <a href="https://www.concordia.ca/ctl/tech-tools/teach-with-technology/guidelines-gen-ai.html"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                Concordia University
+                </a>
+            </li>
+            <li>
+                <a href="https://algomau.ca/academics/academic-integrity-office/faculty-resources-on-academic-integrity/guidelines-for-the-responsible-use-of-generative-ai-in-teaching-and-learning/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                Algoma University
+                </a>
+            </li>
+            <li>
+                <a href="https://www.trentu.ca/ai-trent/ai-guidance/guidance-faculty"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                Trent University
+                </a>
+            </li>
+            <li>
+                <a href="https://aieducation.trubox.ca/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                Thompson Rivers University
+                </a>
+            </li>
+            </ul>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+            These documents are often described as <em>living</em> or <em>iterative</em> resources
+            and are commonly authored by teaching & learning units or libraries.
+            </p>
+
+            <h4 class="text-sm font-semibold text-gray-800 mt-4 mb-2">
+            🧠 Some go even softer: “principles” and “recommendations”
+            </h4>
+            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mb-4">
+            <li>
+                <a href="https://genai.ubc.ca/guidance/principles/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                University of British Columbia
+                </a>
+            </li>
+            <li>
+                <a href="https://teaching-learning.ucalgary.ca/resources-educators/generative-ai-teaching-and-learning"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                University of Calgary
+                </a>
+            </li>
+            <li>
+                <a href="https://www.yorku.ca/teachingandlearning/gen-ai/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                York University
+                </a>
+            </li>
+            <li>
+                <a href="https://www.uoguelph.ca/vpacademic/avpa/generative-ai-teaching-and-learning/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-red-700 hover:underline">
+                University of Guelph
+                </a>
+            </li>
+            </ul>
+
+            <p class="text-sm text-gray-700 leading-relaxed">
+                <strong>Quick mental model:</strong><br>
+                <em>Policy</em> = laws of the land ·
+                <em>Guidelines</em> = rules of the house ·
+                <em>Principles</em> = how we want to think about it.
+            </p>
+        `
+    },
+    {
+        title: "Who actually writes GenAI guidance at Canadian universities?",
+        emoji: "✍️",
+        body: `
+            <div class="mb-4 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+            <p class="text-xs text-blue-900 leading-relaxed">
+                <strong>Disclosure:</strong>
+                This insight reflects synthesis by <strong>ChatGPT 5.2</strong> across the resources in this directory,
+                using URL patterns and known institutional units to infer authorship.
+            </p>
+            </div>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+            One of the clearest patterns in the dataset is <strong>who</strong> is tasked with
+            authoring GenAI guidance. Rather than being owned by a single office,
+            responsibility is distributed across several institutional actors.
+            </p>
+
+            <h4 class="text-sm font-semibold text-gray-800 mb-2">
+            The three most common authors
+            </h4>
+            <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 mb-4">
+            <li>
+                <strong>Teaching &amp; Learning units</strong> — often framing AI through pedagogy,
+                assessment design, and instructor autonomy.
+            </li>
+            <li>
+                <strong>Libraries</strong> — especially where AI intersects with research literacy,
+                citation, and student-facing use.
+            </li>
+            <li>
+                <strong>Provost or central academic offices</strong> — typically when guidance is
+                tied to institutional strategy or academic integrity.
+            </li>
+            </ul>
+
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+            Less commonly, guidance is authored at the <strong>faculty or school level</strong>
+            (for example, in medicine or graduate studies), usually where AI use has
+            discipline-specific stakes.
+            </p>
+
+            <p class="text-sm text-gray-700 leading-relaxed">
+            <strong>Why this matters:</strong> who writes the document often signals
+            <em>how AI is being framed</em>—as a teaching practice issue, a research skills issue,
+            or a governance concern—long before the word “policy” ever appears.
+            </p>
+        `
+    }
+
+  ];
+
+  function renderFunFacts(){
+    const root = document.getElementById("fun-facts-root");
+    root.innerHTML = "";
+
+    funFacts.forEach((f, i) => {
+      const el = document.createElement("details");
+      el.className = "bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-200 overflow-hidden";
+      el.innerHTML = `
+        <summary class="cursor-pointer select-none px-5 py-4 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xl">${f.emoji || "✨"}</span>
+            <h3 class="text-base md:text-lg font-semibold text-gray-800">${f.title}</h3>
+          </div>
+          <span class="text-gray-400 text-sm">Click</span>
+        </summary>
+        <div class="px-5 pb-5 pt-1 border-t border-gray-100">
+          ${f.body}
+        </div>
+      `;
+      root.appendChild(el);
+    });
+  }
+
+  renderFunFacts();
+</script>
+
+</body>
+</html>
