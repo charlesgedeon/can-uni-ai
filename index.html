@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Canadian University AI Teaching Guidelines Directory</title>
+  <title>Canadian University AI Approaches Directory</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
@@ -21,7 +21,7 @@
 
         <div>
           <a href="index.html" class="inline-block">
-            <h1 class="text-3xl font-bold">Canadian University AI Guidelines</h1>
+            <h1 class="text-3xl font-bold">Canadian University AI Approaches</h1>
           </a>
           <p class="text-lg text-red-200">A directory for educators and teaching centers.</p>
         </div>
@@ -29,7 +29,8 @@
         <div class="flex flex-wrap items-center gap-4">
           <nav class="flex items-center gap-4 text-sm font-semibold">
             <a href="index.html" class="text-white hover:text-red-200 transition-colors duration-200">Home</a>
-            <a href="fun-facts.html" class="text-white hover:text-red-200 transition-colors duration-200">Fun Facts</a>
+            <a href="insights.html" class="text-white hover:text-red-200 transition-colors duration-200">Insights</a>
+            <a href="about.html" class="text-white hover:text-red-200 transition-colors duration-200">About</a>
           </nav>
 
           <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
@@ -56,30 +57,16 @@
       <div class="container mx-auto">
         <div class="max-w-6xl mx-auto">
 
-          <div class="bg-white rounded-lg shadow p-5 mb-6">
-            <h2 class="text-lg font-semibold text-gray-800 mb-1">About this directory</h2>
-            <p class="text-sm text-gray-700 leading-relaxed mb-6">
-              This simple directory is meant to help Canadian university teaching and learning units (e.g., Centres for Teaching &amp; Learning / Teaching Commons / Educational Development)
-              and Canadian instructors find, compare, and share guidance on generative AI in higher education.
-              If I’m missing a resource, or if a tag is misattributed, please
-              <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
-                 class="text-red-700 hover:text-red-900 underline">contact me</a>.
+          <!-- Random Insight (top reflection prompt) -->
+          <div class="bg-white rounded-lg shadow p-4 mb-6 border-l-4 border-red-700">
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Reflection prompt</p>
+            <p id="random-insight" class="text-sm text-gray-800 leading-relaxed">
+              <!-- JS will insert a sentence here -->
             </p>
-
-            <h2 class="text-md font-semibold text-gray-800 mb-1">Who is this?</h2>
-            <p class="text-sm text-gray-700 leading-relaxed mb-1">
-              👋 Hello, I'm Charlie Gedeon, a university instructor, instructional and UX designer. In 2025, I gave a
-              <a href="https://www.youtube.com/watch?v=m8WomdCLBqE" target="_blank" rel="noopener noreferrer"
-                 class="text-red-700 hover:text-red-900 underline">TEDx Talk</a>
-              on AI in education that has gained over 200,000 views.
-            </p>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              Enjoyed this resource? Add me on
-              <a href="https://www.linkedin.com/in/charlesgedeon/" target="_blank" rel="noopener noreferrer"
-                 class="text-red-700 hover:text-red-900 underline">LinkedIn</a>
-              and subscribe to my
-              <a href="https://www.youtube.com/channel/UCTAbJsNNMtsOgGZYAKtF8cA" target="_blank" rel="noopener noreferrer"
-                 class="text-red-700 hover:text-red-900 underline">YouTube channel</a>.
+            <p class="mt-1 text-xs">
+              <a href="insights.html" class="text-red-700 hover:underline font-medium">
+                Read insights →
+              </a>
             </p>
           </div>
 
@@ -632,6 +619,42 @@ function renderSections() {
     root.appendChild(section);
   });
 }
+
+/**
+ * Random Insight (pre-generated sentences)
+ * - Randomly selects one insight on each page refresh
+ */
+const REFLECTION_INSIGHTS = [
+  "At <strong>University of Toronto</strong>, generative AI guidance lives with teaching and learning centres, at <strong>University of Waterloo</strong>, it is framed first through academic integrity, same technology, very different signals to instructors.",
+  "<strong>UBC</strong> and <strong>McGill</strong> both publish GenAI guidance, only <strong>UBC</strong> consistently frames it as an assessment design issue, while <strong>McGill</strong> foregrounds academic responsibility and risk.",
+  "Several universities call their AI documents guidance or principles, <strong>Queen’s University</strong> is one of the few that explicitly labels parts of its approach as policy, a small word choice with large implications.",
+  "At <strong>University of Alberta</strong>, AI guidance emphasizes instructional flexibility, at <strong>University of Calgary</strong>, the same topic appears more tightly coupled to misconduct prevention.",
+  "<strong>Western University</strong> publishes GenAI guidance through teaching and learning units, <strong>York University</strong> routes much of its AI messaging through broader academic integrity frameworks.",
+  "Libraries author AI guidance at <strong>Dalhousie University</strong> and <strong>Memorial University</strong>, positioning AI first as a research literacy challenge rather than a teaching problem.",
+  "At <strong>Simon Fraser University</strong>, AI guidance appears across multiple decentralized pages, at <strong>University of Victoria</strong>, it is consolidated into a single library-led resource.",
+  "<strong>McMaster University</strong> frames generative AI as something instructors design around, <strong>Toronto Metropolitan University</strong> emphasizes clarity and disclosure expectations in course materials.",
+  "Some institutions publish AI guidance without mentioning detection at all, <strong>University of British Columbia</strong> discusses it cautiously, <strong>University of Ottawa</strong> largely avoids it.",
+  "At <strong>University of Regina</strong>, AI guidance appears primarily in student-facing materials, instructors are left to infer expectations rather than being addressed directly.",
+  "<strong>Concordia University</strong> and <strong>Université de Montréal</strong> both publish GenAI resources, but only one consistently situates AI within broader conversations about digital pedagogy.",
+  "Environmental impact is mentioned in AI guidance at only a handful of institutions, <strong>UBC</strong> acknowledges it briefly, most others omit it entirely.",
+  "At <strong>University of Guelph</strong>, AI guidance is framed as evolving and contextual, at <strong>Brock University</strong>, updates appear more episodic and reactive.",
+  "Several universities describe their AI documents as living, <strong>University of Toronto</strong> updates regularly, others have not revised guidance since early 2023.",
+  "When AI guidance is written by libraries at <strong>Mount Allison University</strong> and <strong>University of Winnipeg</strong>, citation and attribution dominate the conversation.",
+  "<strong>Carleton University</strong> emphasizes transparency and disclosure in AI use, <strong>University of Saskatchewan</strong> focuses more heavily on instructor judgment.",
+  "Across institutions, the same advice appears repeatedly, clarify expectations, design assessments thoughtfully, yet the authority behind that advice varies widely by university.",
+  "At <strong>Université de Moncton</strong>, AI guidance is closely tied to integrity frameworks, bilingual context shapes how responsibility and authorship are discussed.",
+  "Some universities centralize AI guidance institution-wide, <strong>University of Alberta</strong> does this explicitly, others leave interpretation to faculties and departments.",
+  "Reading AI guidance side by side reveals a pattern, universities differ less on what instructors should do, and more on who they think should decide."
+];
+
+
+(function renderRandomInsight() {
+  const el = document.getElementById("random-insight");
+  if (!el) return;
+  const pick = REFLECTION_INSIGHTS[Math.floor(Math.random() * REFLECTION_INSIGHTS.length)];
+  el.innerHTML = pick;
+})();
+
 
 /**
  * Init

@@ -1,0 +1,111 @@
+<!-- filepath: /Users/charlieg/Documents/GitHub/can-ed-ai-directory/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About · Canadian University AI Approaches</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-red-800 text-white shadow-md">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+
+                <div>
+                    <a href="index.html" class="inline-block">
+                        <h1 class="text-3xl font-bold">Canadian University AI Approaches</h1>
+                    </a>
+                    <p class="text-lg text-red-200">A directory for educators and teaching centers.</p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <nav class="flex items-center gap-4 text-sm font-semibold">
+                        <a href="index.html" class="text-white hover:text-red-200 transition-colors duration-200">Home</a>
+                        <a href="insights.html" class="text-white hover:text-red-200 transition-colors duration-200">Insights</a>
+                        <a href="about.html" class="text-white hover:text-red-200 transition-colors duration-200">About</a>
+                    </nav>
+
+                    <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
+                        class="inline-block bg-white text-red-700 px-5 py-2.5 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200">
+                        Contact
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="p-6">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Video embed -->
+                <div class="bg-white rounded-lg shadow p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Watch: Intro to the Directory</h2>
+                    <div class="aspect-video rounded-lg overflow-hidden bg-gray-900">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kvq1nOqjMWk?si=ScWnolcFHZ3ZvvYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- About this directory -->
+                <div class="bg-white rounded-lg shadow p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">About this directory</h2>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-6">
+                        This simple directory is meant to help Canadian university teaching and learning units (e.g., Centres for Teaching &amp; Learning / Teaching Commons / Educational Development)
+                        and Canadian instructors find, compare, and share guidance on generative AI in higher education.
+                        If I'm missing a resource, or if a tag is misattributed, please
+                        <a href="https://charliegedeon.com/contact/" target="_blank" rel="noopener noreferrer"
+                             class="text-red-700 hover:text-red-900 underline">contact me</a>.
+                    </p>
+                </div>
+
+                <!-- Who is this? -->
+                <div class="bg-white rounded-lg shadow p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Who is this?</h2>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        👋 Hello, I'm Charlie Gedeon, a university instructor, instructional and UX designer. In 2025, I gave a
+                        <a href="https://www.youtube.com/watch?v=m8WomdCLBqE" target="_blank" rel="noopener noreferrer"
+                             class="text-red-700 hover:text-red-900 underline">TEDx Talk</a>
+                        on AI in education that has gained over 200,000 views.
+                    </p>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Enjoyed this resource? Add me on
+                        <a href="https://www.linkedin.com/in/charlesgedeon/" target="_blank" rel="noopener noreferrer"
+                             class="text-red-700 hover:text-red-900 underline">LinkedIn</a>
+                        and subscribe to my
+                        <a href="https://www.youtube.com/channel/UCTAbJsNNMtsOgGZYAKtF8cA" target="_blank" rel="noopener noreferrer"
+                             class="text-red-700 hover:text-red-900 underline">YouTube channel</a>.
+                    </p>
+                </div>
+
+                
+                <footer class="text-center text-gray-500 text-sm mt-10 mb-6">
+                    Created by
+                    <a href="https://charliegedeon.com" target="_blank" rel="noopener noreferrer"
+                         class="text-red-700 hover:text-red-900 underline">Charlie Gedeon</a>.
+                    Last updated: <span id="last-updated"></span>
+                </footer>
+
+            </div>
+        </div>
+    </main>
+
+<script>
+    (function initDate(){
+        const now = new Date();
+        document.getElementById("last-updated").innerText =
+            now.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    })();
+</script>
+
+</body>
+</html>
